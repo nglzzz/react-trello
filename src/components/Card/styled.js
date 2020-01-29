@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COMMON } from '../../constants/colors';
 
 export const Item = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ export const Item = styled.div`
   white-space: normal;
   background-color: #fff;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
-  color: #172b4d;
+  color: ${COMMON};
   cursor: pointer;
   
   &:hover {

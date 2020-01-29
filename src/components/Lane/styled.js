@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COMMON } from '../../constants/colors';
 
 export const Content = styled.section`
   width: 272px;
@@ -54,7 +55,7 @@ export const AddCardLink = styled.a`
     &:hover {
       text-decoration: underline;
       background-color: rgba(9,30,66,.08);
-      color: #172b4d;
+      color: ${COMMON};
     }
 `;
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.css';
+import { Wrapper, HomeButton, HomeLogo } from './styled.js';
 
 const Header = () => (
-  <header id="header">
-    <a className="homeButton button" href="/">
+  <Wrapper>
+    <HomeButton href="/">
       <img src="/media/home.svg" alt=""/>
-    </a>
-    <a href="/" className="homeLogo" />
-  </header>
+    </HomeButton>
+    <HomeLogo href="/">&nbsp;</HomeLogo>
+  </Wrapper>
 );
 
 Header.defaultProps = {

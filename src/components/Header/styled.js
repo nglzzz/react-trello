@@ -1,15 +1,18 @@
-#header {
+import styled from 'styled-components';
+import { HeaderButton } from '../HeaderButton';
+
+export const Wrapper = styled.header`
   height: 40px;
   padding: 4px;
   position: relative;
   background: #026aa7;
-}
+`;
 
-.homeButton {
+export const HomeButton = styled(HeaderButton)`
   padding: 8px;
-}
+`;
 
-.homeLogo {
+export const HomeLogo = styled.a`
   width: 80px;
   height: 30px;
   display: block;
@@ -20,8 +23,8 @@
   background-image: url(/media/header-logo.png);
   background-size: 80px 30px;
   opacity: .5;
-}
-
-.homeLogo:hover {
-  opacity: 1
-}
+  
+  &:hover {
+    opacity: 1
+  }
+`;

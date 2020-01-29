@@ -1,15 +1,14 @@
 import React from 'react';
-import './styles.css';
-import Container from '@material-ui/core/Container';
+import { AppContainer } from './styled.js';
 import Header from '../../components/Header';
 import Board from '../../components/Board';
 
 function App() {
   return (
-    <Container maxWidth={false} disableGutters="0">
+    <AppContainer maxWidth={false} disableGutters={false}>
       <Header />
       <Board />
-    </Container>
+    </AppContainer>
   );
 }
 
