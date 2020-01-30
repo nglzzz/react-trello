@@ -42,7 +42,7 @@ export const SubscriptionIcon = styled(Visibility)`
 `;
 
 export const WindowHeader = styled.div`
-  padding-right: 15px;
+  padding-right: 30px;
   position: relative;
   line-height: 11px;
   

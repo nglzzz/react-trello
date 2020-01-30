@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Header as WindowHeader } from './Header';
 import WindowMainColumn from './MainColumn';
 import WindowSidebar from './Sidebar';
 import {
+  CloseIcon,
   Overlay,
   Window,
   WindowContainer
@@ -10,13 +12,20 @@ import {
 import PopOver from '../PopOver';
 
 
-export const ModalWindow = () => {
+export const ModalWindow = (props) => {
   const [isSubscribed, setSubscription] = React.useState(true);
   const [showPopOver, togglePopOver] = React.useState(false);
+
+  const hideModalWindow = () => {
+    props.hideModal();
+  };
 
   return (
     <Overlay>
       <Window>
+        <span onClick={hideModalWindow}>
+          <CloseIcon />
+        </span>
         <WindowContainer>
           <WindowHeader title="Test" isSubscribed={isSubscribed} />
 
@@ -31,3 +40,7 @@ export const ModalWindow = () => {
 };
 
 export default ModalWindow;
+
+ModalWindow.propTypes = {
+  hideModal: PropTypes.func.isRequired,
+};

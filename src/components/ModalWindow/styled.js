@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MaterialCloseIcon from '@material-ui/icons/Close';
 
 export const Overlay = styled.div`
   width: 100%;
@@ -36,5 +37,28 @@ export const WindowContainer = styled.div`
     display: block;
     content: '';
     clear: both;
+  }
+`;
+
+export const CloseIcon = styled(MaterialCloseIcon)`
+  margin: 4px;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  fill: #42526e;
+  transition: background-color 85ms,color 85ms;
+  z-index: 2;
+  cursor: pointer;
+  
+  ${Window} & {
+    width: 40px;
+    height: 40px;
+  }
+  
+  &:hover {
+    background-color: rgba(9,30,66,.08);
   }
 `;

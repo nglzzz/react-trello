@@ -3,13 +3,17 @@ import BoardHeader from '../BoardHeader';
 import BoardBody from '../BoardBody';
 import ModalWindow from '../ModalWindow';
 
-const Board = () => (
-  <div className="board">
-    <BoardHeader />
-    <BoardBody />
+const Board = () => {
+  const [showModal, setShowModal] = React.useState(false);
 
-    <ModalWindow />
-  </div>
-);
+  return (
+    <div className="board">
+      <BoardHeader />
+      <BoardBody showModal={() => setShowModal(true)} />
+
+      {showModal && <ModalWindow hideModal={() => setShowModal(false)} />}
+    </div>
+  );
+};
 
 export default Board;

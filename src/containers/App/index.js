@@ -5,7 +5,7 @@ import Board from '../../components/Board';
 
 function App() {
   return (
-    <AppContainer maxWidth={false} disableGutters={false}>
+    <AppContainer maxWidth={false}>
       <Header />
       <Board />
     </AppContainer>
