@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useOnclickOutside from 'react-cool-onclickoutside';
 import { Header as WindowHeader } from './Header';
 import WindowMainColumn from './MainColumn';
 import WindowSidebar from './Sidebar';
@@ -14,27 +15,50 @@ import PopOver from '../PopOver';
 
 export const ModalWindow = (props) => {
   const [isSubscribed, setSubscription] = React.useState(true);
-  const [showPopOver, togglePopOver] = React.useState(false);
+  const [isShowedPopOver, togglePopOver] = React.useState(false);
+  const [popOverPosition, changePopOverPosition] = React.useState({});
+  const [popOverTitle, setPopOverTitle] = React.useState('');
+  const [popOverContent, setPopOverContent] = React.useState(<></>);
+  const windowRef = useOnclickOutside(() => {
+    // hideModalWindow();
+    // togglePopOver(false);
+  });
 
   const hideModalWindow = () => {
     props.hideModal();
   };
 
+  const showPopOver = (event) => {
+    togglePopOver(true);
+  };
+
   return (
     <Overlay>
-      <Window>
-        <span onClick={hideModalWindow}>
-          <CloseIcon />
-        </span>
+      <Window ref={windowRef}>
+          <span onClick={hideModalWindow}>
+            <CloseIcon />
+          </span>
         <WindowContainer>
           <WindowHeader title="Test" isSubscribed={isSubscribed} />
 
           <WindowMainColumn />
 
-          <WindowSidebar isSubscribed={isSubscribed} setSubscription={setSubscription} />
+          <WindowSidebar
+            isSubscribed={isSubscribed}
+            setSubscription={setSubscription}
+            showPopOver={showPopOver}
+            changePopOverPosition={changePopOverPosition}
+            setPopOverTitle={setPopOverTitle}
+            setPopOverContent={setPopOverContent}
+          />
         </WindowContainer>
       </Window>
-      {showPopOver && <PopOver title='Cover' togglePopOver={() => togglePopOver(false)}>Test</PopOver>}
+      {isShowedPopOver && <PopOver
+        style={popOverPosition}
+        title={popOverTitle}
+        showPopOver={showPopOver}
+        closePopOver={() => togglePopOver(false)}
+      >{popOverContent}</PopOver>}
     </Overlay>
   );
 };

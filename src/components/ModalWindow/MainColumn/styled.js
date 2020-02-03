@@ -1,11 +1,9 @@
-import styled from "styled-components";
-import Button from "../../ModalButton";
-import SubjectIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import styled from 'styled-components';
+import Button from '../../ModalButton';
+import SubjectIcon from '@material-ui/core/SvgIcon/SvgIcon';
 import CloseIcon from '@material-ui/icons/Close';
-import TextareaAutosize from "react-textarea-autosize";
-import {COMMON} from "../../../constants/colors";
-import MaterialButton from "@material-ui/core/Button/Button";
-import {Window} from "../styled";
+import TextareaAutosize from 'react-textarea-autosize';
+import {COMMON} from '../../../constants/colors';
 
 export const WindowMainColumn = styled.div`
   width: 528px;
@@ -109,18 +107,8 @@ export const EditControl = styled.div`
   }
 `;
 
-export const SaveDescriptionButton = styled(MaterialButton)`
-  ${Window} & {
-    background-color: #5aac44;
-    min-width: 54px;
-    color: #fff;
-    text-transform: none;
-    form-weight: 400;
-    
-    &:hover {
-      background-color: #61bd4f;
-    }
-  }
+export const EditButton = styled(Button)`
+  margin: -18px 0 0 5px;
 `;
 
 export const CloseDescription = styled(CloseIcon)`

@@ -9,15 +9,11 @@ import {
 } from './styled.js';
 
 export const PopOver = (props) => {
-  const handleCloseClick = () => {
-    props.togglePopOver();
-  };
-
   return (
-    <Container>
+    <Container style={props.style}>
       <Header>
         <HeaderTitle>{props.title}</HeaderTitle>
-        <span onClick={handleCloseClick}>
+        <span onClick={props.closePopOver}>
           <Close />
         </span>
       </Header>
@@ -28,7 +24,8 @@ export const PopOver = (props) => {
 
 PopOver.propTypes = {
   title: PropTypes.string.isRequired,
-  togglePopOver: PropTypes.func.isRequired,
+  closePopOver: PropTypes.func.isRequired,
+  showPopOver: PropTypes.func.isRequired,
 };
 
 export default PopOver;

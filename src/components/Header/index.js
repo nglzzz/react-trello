@@ -7,7 +7,7 @@ const Header = () => (
     <HomeButton href="/">
       <img src="/media/home.svg" alt=""/>
     </HomeButton>
-    <HomeLogo href="/">&nbsp;</HomeLogo>
+    <HomeLogo href="/" />
   </Wrapper>
 );
 

@@ -8,11 +8,12 @@ import {
   DescriptionText,
   DescriptionTitle,
   DescriptionTitleWrapper,
+  EditButton,
   EditControl,
-  SaveDescriptionButton,
   WindowMainColumn
 } from './styled';
-import Button from '../../ModalButton';
+import SubmitButton from '../../SubmitButton';
+
 
 export const MainColumn = () => {
   const [isShowDescription, toggleDescriptionEditor] = React.useState(false);
@@ -83,7 +84,7 @@ export const MainColumn = () => {
           onKeyPress={pressDescriptionKey}
         />
 
-        <SaveDescriptionButton onClick={() => saveDescription(descriptionText)}>Save</SaveDescriptionButton>
+        <SubmitButton onClick={() => saveDescription(descriptionText)}>Save</SubmitButton>
         <span onClick={closeEditor}>
           <CloseDescription />
         </span>
@@ -98,7 +99,7 @@ export const MainColumn = () => {
           <DescriptionIcon />
 
           <DescriptionTitle>Description</DescriptionTitle>
-          {!isShowDescription && descriptionText && <Button onClick={showDescriptionEditor}>Edit</Button>}
+          {!isShowDescription && descriptionText && <EditButton onClick={showDescriptionEditor}>Edit</EditButton>}
         </DescriptionTitleWrapper>
 
         {renderDescription()}

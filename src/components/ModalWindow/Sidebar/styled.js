@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import ModalButton from '../../ModalButton';
 
 export const WindowSidebar = styled.div`
