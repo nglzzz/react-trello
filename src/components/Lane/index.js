@@ -1,7 +1,14 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import Card from '../../components/Card';
-import { Content, Header, Body, AddCardLink, EditableName } from './styled';
+import {
+  AddIcon,
+  Content,
+  Header,
+  Body,
+  AddCardLink,
+  EditableName
+} from './styled';
 
 const Lane = ({ title, showModal }) => {
   return (
@@ -15,7 +22,8 @@ const Lane = ({ title, showModal }) => {
         <Card showModal={showModal}>ABC</Card>
         <Card showModal={showModal}>ABC</Card>
       </Body>
-      <AddCardLink href="#">
+      <AddCardLink>
+        <AddIcon />
         Add a card
       </AddCardLink>
     </Content>

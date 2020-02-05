@@ -13,6 +13,7 @@ import {
   WindowMainColumn
 } from './styled';
 import SubmitButton from '../../SubmitButton';
+import WindowDetailData from '../DetailData';
 
 
 export const MainColumn = () => {
@@ -94,6 +95,7 @@ export const MainColumn = () => {
 
   return (
     <WindowMainColumn>
+      <WindowDetailData />
       <Description>
         <DescriptionTitleWrapper>
           <DescriptionIcon />

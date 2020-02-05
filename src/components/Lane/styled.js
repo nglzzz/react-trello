@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COMMON } from '../../constants/colors';
+import MaterialAddIcon from '@material-ui/icons/Add'
 
 export const Content = styled.section`
   width: 272px;
@@ -42,20 +43,29 @@ export const EditableName = styled.textarea`
   }
 `;
 
-export const AddCardLink = styled.a`
-    margin: 0 -8px -8px
-    padding: 8px 15px;
+export const AddIcon = styled(MaterialAddIcon)``;
+
+export const AddCardLink = styled.div`
+    padding: 6px 8px;
     display: block;
     flex: 0 0 auto;
     font-size: 14px;
     text-decoration: none;
-    border-radius: 0 0 3px 3px;
+    border-radius: 3px;
     color: #5e6c84;
+    cursor: pointer;
     
     &:hover {
-      text-decoration: underline;
       background-color: rgba(9,30,66,.08);
       color: ${COMMON};
+    }
+    
+    ${AddIcon} {
+      width: 20px;
+      height: 20px;
+      margin-top: -2px;
+      vertical-align: middle;
+      fill: #6b778c;
     }
 `;
 

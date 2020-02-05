@@ -39,7 +39,7 @@ export const ModalWindow = (props) => {
             <CloseIcon />
           </span>
         <WindowContainer>
-          <WindowHeader title="Test" isSubscribed={isSubscribed} />
+          <WindowHeader title={props.title} isSubscribed={isSubscribed} />
 
           <WindowMainColumn />
 
@@ -66,5 +66,10 @@ export const ModalWindow = (props) => {
 export default ModalWindow;
 
 ModalWindow.propTypes = {
+  title: PropTypes.string.isRequired,
   hideModal: PropTypes.func.isRequired,
+};
+
+ModalWindow.defaultProps = {
+  title: 'Title',
 };

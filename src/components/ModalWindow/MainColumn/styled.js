@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../ModalButton';
-import SubjectIcon from '@material-ui/core/SvgIcon/SvgIcon';
+import SubjectIcon from '@material-ui/icons/Subject';
 import CloseIcon from '@material-ui/icons/Close';
 import TextareaAutosize from 'react-textarea-autosize';
 import {COMMON} from '../../../constants/colors';
@@ -9,7 +9,7 @@ export const WindowMainColumn = styled.div`
   width: 528px;
   min-height: 24px;
   margin: 22px 0;
-  padding: 8px;
+  padding: 0 8px 8px 8px;
   position: relative;
   float: left;
   z-index: 0;
@@ -26,6 +26,7 @@ export const DescriptionTitleWrapper = styled.div`
 `;
 
 export const Description = styled.div`
+  padding-top: 8px;
   position: relative;
 `;
 
@@ -33,7 +34,7 @@ export const DescriptionIcon = styled(SubjectIcon)`
   width: 25px;
   height: 25px;
   position: absolute;
-  top: -2px;
+  top: 5px;
   left: -37px;
   
   ${WindowMainColumn} & {
@@ -108,7 +109,7 @@ export const EditControl = styled.div`
 `;
 
 export const EditButton = styled(Button)`
-  margin: -18px 0 0 5px;
+  margin: -18px 0 0 8px;
 `;
 
 export const CloseDescription = styled(CloseIcon)`
