@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import Card from '../../components/Card';
+import Card from '../Card';
+import NewCardForm from '../NewCardForm';
 import {
   AddIcon,
   Content,
@@ -11,6 +12,8 @@ import {
 } from './styled';
 
 const Lane = ({ title, showModal }) => {
+  const [showNewCardForm, setShowNewCardForm] = React.useState(false);
+
   return (
     <Content>
       <Header>
@@ -22,10 +25,11 @@ const Lane = ({ title, showModal }) => {
         <Card showModal={showModal}>ABC</Card>
         <Card showModal={showModal}>ABC</Card>
       </Body>
-      <AddCardLink>
+      {showNewCardForm && <NewCardForm hideForm={() => setShowNewCardForm(false)} />}
+      {!showNewCardForm && <AddCardLink onClick={() => setShowNewCardForm(true)}>
         <AddIcon />
         Add a card
-      </AddCardLink>
+      </AddCardLink>}
     </Content>
   );
 };
