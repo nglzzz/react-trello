@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { HeaderButton } from '../HeaderButton';
 
 export const Wrapper = styled.header`
+  width: 100%;
   height: 40px;
   padding: 4px;
-  position: relative;
+  position: absolute;
+  top: 0;
   background: #026aa7;
 `;
 

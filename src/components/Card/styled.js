@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import * as Colors from '../../constants/colors';
+import Visibility from '@material-ui/icons/Visibility';
+import SubjectIcon from '@material-ui/icons/Subject';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 export const Item = styled.div`
   width: 100%;
@@ -18,6 +21,11 @@ export const Item = styled.div`
   
   &:hover {
     background-color: #f7f6f6
+  }
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
   }
 `;
 
@@ -97,4 +105,85 @@ export const Label = styled.span`
   &.blue {
     background-color: ${Colors.BLUE};
   }
+`;
+
+export const Content = styled.div`
+  max-height: 180px;
+  margin: 0 0 4px;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  clear: both;
+  color: ${Colors.COMMON};
+`;
+
+export const Badges = styled.div`
+  max-width: 100%;
+  margin-left: -2px;
+  float: left;
+`;
+
+export const BadgeItem = styled.div`
+  height: 24px;
+  margin: 0 4px 4px 0;
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+  color: #6b778c;
+`;
+
+export const BadgeText = styled.span`
+  padding: 0 4px;
+  font-size: 12px;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+`;
+
+export const SubscriptionIcon = styled(Visibility)`  
+  ${Badges} & {
+    width: 16px;
+    height: 16px;
+    fill: #6b778c;
+  }
+`;
+
+export const DescriptionIcon = styled(SubjectIcon)`
+  ${Badges} & {
+    width: 16px;
+    height: 16px;
+    fill: #6b778c;
+  }
+`;
+
+export const TimerIcon = styled(AccessTimeIcon)`
+  ${Badges} & {
+    width: 16px;
+    height: 16px;
+    fill: #6b778c;
+  }
+`;
+
+export const MemberList = styled.div`
+  margin: 0 -2px 0 0;
+  float: right;
+`;
+
+export const Member = styled.div`
+  width: 28px;
+  height: 28px;
+  margin: 0 0 4px 4px;
+  float: right;
+  border-radius: 25em;
+`;
+
+export const Avatar = styled.img`
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 25em;
 `;

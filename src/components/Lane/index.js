@@ -20,7 +20,7 @@ const Lane = ({ title, showModal }) => {
         <EditableName defaultValue={title} />
       </Header>
       <Body>
-        <Card showModal={showModal}>Test</Card>
+        <Card showModal={showModal}>Test Test Test Test Test Test Test Test Test Test Test Test Test Test</Card>
         <Card showModal={showModal}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum ante in justo volutpat, non consequat orci rutrum. Quisque cursus lectus gravida congue sagittis. Nulla facilisi. Pellentesque et aliquet arcu. Donec viverra ligula sit amet urna ultricies, quis commodo arcu pellentesque. Vestibulum eleifend neque et posuere feugiat. Quisque nibh diam, maximus quis tincidunt in, pulvinar at odio. Donec non dictum massa. Quisque venenatis risus et arcu aliquet pretium. Ut dictum porta ante, vel maximus nunc vestibulum sit amet. In eleifend lacus erat, quis suscipit eros volutpat ut.</Card>
         <Card showModal={showModal}>ABC</Card>
         <Card showModal={showModal}>ABC</Card>

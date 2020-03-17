@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import {
   Item,
   Label,
-  ListLabels
+  ListLabels,
+  Content,
+  Badges,
+  BadgeItem,
+  BadgeText,
+  TimerIcon,
+  SubscriptionIcon,
+  DescriptionIcon,
+  MemberList,
+  Member,
+  Avatar
 } from './styled';
 
 export const Card = (props) => {
@@ -58,7 +68,22 @@ export const Card = (props) => {
         <Label className="purple" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
         <Label className="blue" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
       </ListLabels>
-      {props.children}
+      <Content>{props.children}</Content>
+      <Badges>
+        <BadgeItem title="You are watching this card">
+          <SubscriptionIcon/>
+        </BadgeItem>
+        <BadgeItem title="This card is due later.">
+          <TimerIcon/>
+          <BadgeText>Mar 18, 2021</BadgeText>
+        </BadgeItem>
+        <BadgeItem title="This card has a description">
+          <DescriptionIcon/>
+        </BadgeItem>
+      </Badges>
+      <MemberList>
+        <Member><Avatar src="https://trello-members.s3.amazonaws.com/55cdf18760c6d02845ac7d8b/f0fcf81508ba6d03489f1eabe461495f/30.png" /></Member>
+      </MemberList>
     </Item>
   );
 };

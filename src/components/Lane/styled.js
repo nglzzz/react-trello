@@ -4,7 +4,6 @@ import MaterialAddIcon from '@material-ui/icons/Add'
 
 export const Content = styled.section`
   width: 272px;
-  height: 100%;
   max-height: 100%;
   margin: 0 8px 1em 0;
   padding: 8px;
@@ -14,7 +13,7 @@ export const Content = styled.section`
   vertical-align: top;
   white-space: nowrap;
   border-radius: 3px;
-  box-sizing: border-box;
+  overflow-y: auto;
   background-color: #ebecf0;
 `;
 

@@ -3,6 +3,9 @@ import Container from '@material-ui/core/Container';
 import { COMMON } from '../../constants/colors';
 
 export const AppContainer = styled(Container)`
+  height: 100%;
+  padding-top: 40px;
+
   #root & {
     padding-left: 0;
     padding-right: 0;
