@@ -1,5 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import SubmitButton from '../../SubmitButton';
 import {
   Button,
   WindowSidebar,
@@ -29,7 +30,10 @@ export const Sidebar = (props) => {
   const showCoverPopOver = (event) => {
     showPopOverUnderButton(event.target);
     props.setPopOverTitle('Cover');
-    props.setPopOverContent('You don\'t have any covers. Covers make your cards more visual, memorable, and fun. Want to add one?');
+    props.setPopOverContent(<>
+      You don't have any covers. Covers make your cards more visual, memorable, and fun. Want to add one?
+      <SubmitButton>Archive</SubmitButton>
+    </>);
   };
 
 

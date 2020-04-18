@@ -15,6 +15,7 @@ import {
   Member,
   Avatar
 } from './styled';
+import CardCover from '../CardCover';
 
 export const Card = (props) => {
   const [isOpenLabel, setIsOpenLabel] = React.useState(false);
@@ -60,6 +61,7 @@ export const Card = (props) => {
 
   return (
     <Item onClick={showModal}>
+      <CardCover image={props.image} />
       <ListLabels className={listLabelsClasses.join(' ')}>
         <Label className="green" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}>Test</Label>
         <Label className="yellow" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
@@ -91,6 +93,7 @@ export const Card = (props) => {
 Card.propTypes = {
   showModal: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  image: PropTypes.string,
 };
 
 export default Card;

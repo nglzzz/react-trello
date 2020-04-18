@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useOnclickOutside from 'react-cool-onclickoutside';
+import { Cover as WindowCover } from './Cover';
 import { Header as WindowHeader } from './Header';
 import WindowMainColumn from './MainColumn';
 import WindowSidebar from './Sidebar';
@@ -35,9 +36,10 @@ export const ModalWindow = (props) => {
   return (
     <Overlay>
       <Window ref={windowRef}>
-          <span onClick={hideModalWindow}>
-            <CloseIcon />
-          </span>
+        <span onClick={hideModalWindow}>
+          <CloseIcon />
+        </span>
+        <WindowCover />
         <WindowContainer>
           <WindowHeader title={props.title} isSubscribed={isSubscribed} />
 

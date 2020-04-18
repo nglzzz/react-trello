@@ -3,13 +3,10 @@ import CloseIcon from '@material-ui/icons/Close';
 
 export const Container = styled.div`
   width: 304px;
-  display: none;
   display: block;
   overflow: hidden;
   position: absolute;
-  top: -9999px;
   top: 0;
-  right: -9999px;
   right: 0;
   border-radius: 3px;
   box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);

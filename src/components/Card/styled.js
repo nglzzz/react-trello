@@ -125,6 +125,7 @@ export const Content = styled.div`
 export const Badges = styled.div`
   max-width: 100%;
   margin-left: -2px;
+  display: flex;
   float: left;
 `;
 
@@ -132,15 +133,14 @@ export const BadgeItem = styled.div`
   height: 24px;
   margin: 0 4px 4px 0;
   padding: 5px;
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
+  align-items: center;
   color: #6b778c;
 `;
 
 export const BadgeText = styled.span`
   padding: 0 4px;
   font-size: 12px;
-  vertical-align: text-bottom;
   white-space: nowrap;
 `;
 
