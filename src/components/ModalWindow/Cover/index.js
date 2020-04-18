@@ -28,7 +28,7 @@ export const Cover = (props) => {
 };
 
 Cover.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 Cover.defaultProps = {

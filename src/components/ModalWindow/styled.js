@@ -16,6 +16,14 @@ export const Overlay = styled.div`
   z-index: 20;
 `;
 
+export const WindowCloser = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
+
 export const Window = styled.div`
   width: 768px;
   max-width: calc(100% - 20px);

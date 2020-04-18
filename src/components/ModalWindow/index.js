@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useOnclickOutside from 'react-cool-onclickoutside';
 import { Cover as WindowCover } from './Cover';
 import { Header as WindowHeader } from './Header';
 import WindowMainColumn from './MainColumn';
@@ -9,7 +8,8 @@ import {
   CloseIcon,
   Overlay,
   Window,
-  WindowContainer
+  WindowContainer,
+  WindowCloser
 } from './styled.js';
 import PopOver from '../PopOver';
 
@@ -20,14 +20,6 @@ export const ModalWindow = (props) => {
   const [popOverPosition, changePopOverPosition] = React.useState({});
   const [popOverTitle, setPopOverTitle] = React.useState('');
   const [popOverContent, setPopOverContent] = React.useState(<></>);
-  const windowRef = useOnclickOutside(() => {
-    // hideModalWindow();
-    // togglePopOver(false);
-  });
-
-  const hideModalWindow = () => {
-    props.hideModal();
-  };
 
   const showPopOver = (event) => {
     togglePopOver(true);
@@ -35,8 +27,9 @@ export const ModalWindow = (props) => {
 
   return (
     <Overlay>
-      <Window ref={windowRef}>
-        <span onClick={hideModalWindow}>
+      <WindowCloser onClick={props.hideModal} />
+      <Window>
+        <span onClick={props.hideModal}>
           <CloseIcon />
         </span>
         <WindowCover />
