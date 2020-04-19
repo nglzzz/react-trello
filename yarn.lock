@@ -8602,11 +8602,6 @@ react-app-polyfill@^1.0.5:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-cool-onclickoutside@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-cool-onclickoutside/-/react-cool-onclickoutside-1.0.6.tgz#cae4405f0f279c29a4817207619529d0a884a3bf"
-  integrity sha512-BC/onqpbXXAFqRdz+ho8vS7g1mb7BWRmZ2oemKU7dwhM5mC/694efBhQPW49DAr8tir9PcjPEBRguFy+73nmTA==
-
 react-dev-utils@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-10.0.0.tgz#bd2d16426c7e4cbfed1b46fb9e2ac98ec06fcdfa"
