@@ -106,12 +106,13 @@ export const OverlayMetaItem = styled.span`
   padding: 0 18px;
   position: relative;
 
-  a {
+  .point, .delete-link {
     text-decoration: underline;
     color: #fff;
+    cursor: pointer;
     
     &:hover {
-    text-decoration: none;
+      text-decoration: none;
     }
   }
   

@@ -42,29 +42,29 @@ export const AttachmentViewer = ({hideAttachmentViewer, image}) => {
             {!showDeleteConfirmation &&
             <>
               <Styled.OverlayMetaItem>
-                <a href={image} target="_blank" rel="noopener noreferrer">
+                <a href={image} className="point" target="_blank" rel="noopener noreferrer">
                   <Styled.OpenLinkIcon />
                   Open in New Tab
                 </a>
               </Styled.OverlayMetaItem>
               <Styled.OverlayMetaItem>
-                <a href="#" onClick={toggleCover}>
+                <span className="point" onClick={toggleCover}>
                   <Styled.ChangeCoverIcon />
                   {isCover ? 'Remove Cover' : 'Make Cover'}
-                </a>
+                </span>
               </Styled.OverlayMetaItem>
               <Styled.OverlayMetaItem>
-                <a href="#" onClick={confirmDelete}>
+                <span className="point" onClick={confirmDelete}>
                   <Styled.DeleteIcon />
                   Delete
-                </a>
+                </span>
               </Styled.OverlayMetaItem>
             </>}
             {showDeleteConfirmation &&
               <Styled.OverlayMetaItem>
                 Are you sure you want to delete? There is no undo.
-                <a href="#" className="delete-link" onClick={deleteCover}>Delete forever.</a>
-                <a href="#" className="delete-link" onClick={cancelDelete}>Never mind.</a>
+                <span className="delete-link" onClick={deleteCover}>Delete forever.</span>
+                <span className="delete-link" onClick={cancelDelete}>Never mind.</span>
               </Styled.OverlayMetaItem>
             }
           </Styled.OverlayMeta>

@@ -15,7 +15,7 @@ export const DetailData = () => {
       <Item>
         <Title>Members</Title>
         <div>
-          <Member><img src="https://trello-avatars.s3.amazonaws.com/f0fcf81508ba6d03489f1eabe461495f/30.png" /></Member>
+          <Member><img src="https://trello-avatars.s3.amazonaws.com/f0fcf81508ba6d03489f1eabe461495f/30.png" alt="" /></Member>
           <span>
             <AddButton className="circle" />
           </span>
