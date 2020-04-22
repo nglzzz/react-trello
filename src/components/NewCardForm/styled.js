@@ -4,6 +4,7 @@ import SubmitButton from '../SubmitButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 export const FormWrapper = styled.div`
+  padding-bottom: 8px;
   position: relative;
   overflow: hidden;
 `;
