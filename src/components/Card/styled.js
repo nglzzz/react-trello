@@ -136,6 +136,16 @@ export const BadgeItem = styled.div`
   display: flex;
   align-items: center;
   color: #6b778c;
+  
+  &.is-due-past {
+    border-radius: 3px;
+    background-color: #ec9488;
+    color: #fff;
+    
+    svg {
+      fill: #fff;
+    }
+  }
 `;
 
 export const BadgeText = styled.span`

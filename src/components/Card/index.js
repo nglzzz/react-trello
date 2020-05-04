@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {dateFormat} from 'helpers/date.js';
 import {
   Item,
   Label,
@@ -21,6 +22,8 @@ export const Card = (props) => {
   const [isOpenLabel, setIsOpenLabel] = React.useState(false);
   const [listLabelsClasses, setListLabelsClass] = React.useState([]);
   const [allowShowingModal, setAllowShowingModal] = React.useState(true);
+  const dueDate = dateFormat(props.card.dueDate);
+  const isDuePast = new Date(props.card.dueDate) < new Date();
 
   const toggleOpenLabel = () => {
     toggleListLabelsClasses('opened');
@@ -63,25 +66,28 @@ export const Card = (props) => {
     <Item onClick={showModal}>
       <CardCover image={props.image} />
       <ListLabels className={listLabelsClasses.join(' ')}>
-        <Label className="green" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}>Test</Label>
-        <Label className="yellow" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
-        <Label className="orange" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
-        <Label className="red" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
-        <Label className="purple" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
-        <Label className="blue" onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}/>
+        {props.card.labels.map((label, index) => (
+          <Label key={index} className={label.color} onClick={toggleOpenLabel} onMouseEnter={onMouseLabelEnter} onMouseLeave={onMouseLabelLeave}>Test</Label>
+        ))}
       </ListLabels>
       <Content>{props.children}</Content>
       <Badges>
-        <BadgeItem title="You are watching this card">
-          <SubscriptionIcon/>
-        </BadgeItem>
-        <BadgeItem title="This card is due later.">
-          <TimerIcon/>
-          <BadgeText>Mar 18, 2021</BadgeText>
-        </BadgeItem>
-        <BadgeItem title="This card has a description">
-          <DescriptionIcon/>
-        </BadgeItem>
+        {props.card.subscribed && (
+          <BadgeItem title="You are watching this card">
+            <SubscriptionIcon/>
+          </BadgeItem>
+        )}
+        {dueDate && (
+          <BadgeItem title="This card is due later." className={isDuePast ? 'is-due-past' : ''}>
+            <TimerIcon/>
+            <BadgeText>{dueDate}</BadgeText>
+          </BadgeItem>
+        )}
+        {props.card.description.trim().length > 0 && (
+          <BadgeItem title="This card has a description">
+            <DescriptionIcon/>
+          </BadgeItem>
+        )}
       </Badges>
       <MemberList>
         <Member><Avatar src="https://trello-members.s3.amazonaws.com/55cdf18760c6d02845ac7d8b/f0fcf81508ba6d03489f1eabe461495f/30.png" /></Member>
@@ -91,6 +97,7 @@ export const Card = (props) => {
 };
 
 Card.propTypes = {
+  card: PropTypes.object.isRequired,
   showModal: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   image: PropTypes.string,

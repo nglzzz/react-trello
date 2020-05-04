@@ -1,10 +1,19 @@
 import React from 'react';
-import { Header, Name, Divider, Team } from './styled.js';
+import {
+  Button,
+  Divider,
+  Header,
+  Name,
+  Team,
+  StarIcon
+} from './styled.js';
 
 const BoardHeader = () => (
   <Header>
-    <Name>Trello Board</Name>
+    <Name defaultValue="My" />
+    <Button><StarIcon /></Button>
     <Divider />
+    <Button>Personal</Button>
     <Team>Private Team</Team>
   </Header>
 );
