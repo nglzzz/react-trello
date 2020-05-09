@@ -5,6 +5,7 @@ import {
   Item,
   Label,
   ListLabels,
+  CardMemberList as MemberList,
   Content,
   Badges,
   BadgeItem,
@@ -12,9 +13,6 @@ import {
   TimerIcon,
   SubscriptionIcon,
   DescriptionIcon,
-  MemberList,
-  Member,
-  Avatar
 } from './styled';
 import CardCover from '../CardCover';
 
@@ -62,6 +60,17 @@ export const Card = (props) => {
     }
   };
 
+  // Todo: change
+  const members = [{
+    fullName: 'Test',
+    avatarUrl: '',
+    initials: 'T',
+  }, {
+    fullName: 'Test',
+    avatarUrl: 'http://lorempixel.com/300/300/',
+    initials: 'W',
+  }];
+
   return (
     <Item onClick={showModal}>
       <CardCover image={props.image} />
@@ -89,9 +98,7 @@ export const Card = (props) => {
           </BadgeItem>
         )}
       </Badges>
-      <MemberList>
-        <Member><Avatar src="https://trello-members.s3.amazonaws.com/55cdf18760c6d02845ac7d8b/f0fcf81508ba6d03489f1eabe461495f/30.png" /></Member>
-      </MemberList>
+      <MemberList className="float-right" list={members} />
     </Item>
   );
 };

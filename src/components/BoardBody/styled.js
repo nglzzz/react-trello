@@ -4,7 +4,7 @@ export const Body = styled.div`
   max-width: 100%;
   height: calc(100% - 58px);
   margin-bottom: 10px;
-  padding: 0 5px 8px 5px;
+  padding: 0 4px 8px 4px;
   white-space: nowrap;
   overflow-x: auto;
   

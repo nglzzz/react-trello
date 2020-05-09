@@ -3,6 +3,7 @@ import * as Colors from '../../constants/colors';
 import Visibility from '@material-ui/icons/Visibility';
 import SubjectIcon from '@material-ui/icons/Subject';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import MemberList from '../MemberList';
 
 export const Item = styled.div`
   width: 100%;
@@ -178,22 +179,8 @@ export const TimerIcon = styled(AccessTimeIcon)`
   }
 `;
 
-export const MemberList = styled.div`
-  margin: 0 -2px 0 0;
-  float: right;
-`;
-
-export const Member = styled.div`
-  width: 28px;
-  height: 28px;
-  margin: 0 0 4px 4px;
-  float: right;
-  border-radius: 25em;
-`;
-
-export const Avatar = styled.img`
-  width: 28px;
-  height: 28px;
-  object-fit: cover;
-  border-radius: 25em;
+export const CardMemberList = styled(MemberList)`
+  > * {
+    margin-left: 4px;
+  }
 `;

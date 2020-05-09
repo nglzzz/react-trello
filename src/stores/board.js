@@ -6,6 +6,7 @@ export const board = {
   dateLastActivity: '2020-04-22T21:30:49.236Z',
   description: 'test',
   subscribed: false,
+  editable: true,
   lists: [
     {
       id: 'list-id-1',
@@ -68,10 +69,18 @@ export const board = {
     {
       id: 'member-1',
       fullName: 'Full Name',
-      avatarUrl: '',
+      avatarUrl: 'http://lorempixel.com/30/30/',
       bio: '',
       initials: 'FN',
       username: 'member1',
+    },
+    {
+      id: 'member-2',
+      fullName: 'Full Name',
+      avatarUrl: '',
+      bio: '',
+      initials: 'FN',
+      username: 'member2',
     },
   ],
   labels: {
